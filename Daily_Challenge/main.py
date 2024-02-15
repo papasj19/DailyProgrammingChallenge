@@ -13,6 +13,15 @@ def filter_list(a):
             sendOut.append(a[counter])
         counter = counter + 1
     return sendOut
+    
+# Day 2
+#   Write a function count_festivals that takes a list of integers as input,
+#   where each integer represents the number of festivals attended by a person in a particular year.
+#
+#   The function should return the total number of festivals attended
+#   by all the people in the list.
+def count_festivals(festivals):
+    return sum(festivals)
 
 
 
