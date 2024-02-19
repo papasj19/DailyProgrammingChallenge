@@ -22,6 +22,46 @@ def filter_list(a):
 #   by all the people in the list.
 def count_festivals(festivals):
     return sum(festivals)
+  
+  
+# Day 3
+#  Write a function named check_space that gets string as input
+#  and returns True if the given string contains any spaces,
+#  otherwise False. It should also return False if the string is empty.
+def check_space(s):
+    # Write code here
+    if not s or " " not in s:
+        return False
+    else:
+        return True
+    
+    
+#   Day 4
+# Create a function named identify_animal_sound that takes one argument:
+# sound (a string) - the recorded sound to be analyzed and identified.
+# Inside the function, analyze the provided sound and determine if it matches the sound of a known wild animal.
+# You are provided with a list of known animal sounds
+#  (e.g., lion's roar, elephant's trumpet, bird's chirp) for the purpose of this challenge.
+# Return the name of the first wild animal if the sound matches a known animal sound.
+# If it doesn't match any known animal sound, return "Unknown."
+known_animal_sounds = {
+    "lion": ["roar", "growl", "grunt"],
+    "elephant": ["trumpet", "roar", "snort"],
+    "bird": ["chirp", "whistle", "tweet"],
+}
+
+def identify_animal_sound(sound):
+    # Write code here
+    counter = 0
+    while counter < 3:
+        if known_animal_sounds["lion"][counter] == sound:
+            return "lion"
+        elif known_animal_sounds["elephant"][counter] == sound:
+            return "elephant"
+        elif known_animal_sounds["bird"][counter] == sound:
+            return "bird"
+        counter = counter + 1
+    return "Unknown"
 
 
 
