@@ -65,7 +65,13 @@ def identify_animal_sound(sound):
 
 
 
-
+# Day 5
+# Create a function named tri_area that returns the area of a triangle based on its base and height.
+#
+# The formula for calculating the area of a triangle is (base * height) / 2.
+# The function should take two arguments, the base and height, and return the calculated area.
+def tri_area(base, height):
+    return int((base*height)/2)
 
 
 
