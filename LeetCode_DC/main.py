@@ -55,6 +55,23 @@ def missingNumber(nums):
         else:
             prevNum = numb
     return len(nums)
+    
+
+# Given two integers left and right that represent the range [left, right],
+# return the bitwise AND of all numbers in this range, inclusive.
+def rangeBitwiseAnd(left, right):
+    tester = []
+    z = left
+    while z <= right:
+        tester.append(z)
+        z = z + 1
+    result = left
+    for num in tester:
+        result &= num
+        print(result)
+    return result
+    
+    
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
