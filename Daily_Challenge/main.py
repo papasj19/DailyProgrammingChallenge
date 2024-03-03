@@ -164,6 +164,116 @@ def calculate_vacant_area(beach):
 def min_max(nums):
     nums.sort()
     return [nums[0],nums[-1]]
+    
+    
+# Day 12
+#  Write a function extract_domain(url) that takes a string url as input
+#  and returns the domain name (including the subdomain if present) without
+#  the http:// or https:// part. The function should be case-insensitive
+#  and should handle both http:// and https:// URLs.
+def extract_domain(url):
+    broken = url.split('/')
+    goodWords = []
+    for word in broken:
+        if not "http" in word and word:
+            goodWords.append(word.lower())
+    if len(goodWords) > 1:
+        for goodw in goodWords:
+            if "www" in goodw or "co" in goodw:
+                return goodw
+    else:
+        return goodWords.pop(0)
+
+
+# Day 13
+#  Write a function find_odd_occurrence(arr) that takes a list of integers
+#  as input and returns the number that occurs an odd number of times.
+#  The input list will always contain only one number that occurs an odd
+#  number of times, while all others occur an even number of times.
+def find_odd_occurrence(arr):
+    res = {}
+    for num in arr:
+        if num not in res:
+            res[num] = 1
+        else:
+            res[num] = res[num] + 1
+    for numb in res:
+        if res[numb] % 2 != 0:
+            return numb
+
+
+# Day 14
+def arrayStringsAreEqual(word1, word2):
+    """
+    :type word1: List[str]
+    :type word2: List[str]
+    :rtype: bool
+    """
+    wordOne = ''.join(word1)
+    wordTwo = ''.join(word2)
+    return wordOne == wordTwo
+
+
+# Day 15
+def countCharacters(words, chars):
+        """
+        :type words: List[str]
+        :type chars: str
+        :rtype: int
+        """
+        goodW = []
+        for wrd in words:
+            counter = 0
+            leng = len(wrd)
+            for let in wrd:
+                if let in chars:
+                    counter = counter + 1
+                else:
+                    counter = 0
+            if counter == leng:
+                goodW.append(len(wrd))
+        return sum(goodW)
+
+
+# Day 16
+# Write a python function named check_alphabet_order that takes a string
+# as input and return True if the letters of the input string are in
+# alphabetical order, and False otherwise.
+def check_alphabet_order(a):
+    # Write code here
+    for i in range(len(a) - 1):
+        if a[i] > a[i + 1]:
+            return False
+    return True
+
+
+# Day 17
+# Write a function named ctoa that provides the ASCII value of a
+# given character.
+def ctoa(x):
+    return ord(x)
+
+
+# Day 18
+# Write a function sum_of_two_values(arr, target) that takes a list of
+# numbers arr and a target number target as input and returns a
+# tuple of two numbers that add up to the target number, if such a pair exists.
+# If no such pair exists, the function should return [].
+def sum_of_two_values(arr, target):
+    # Write code here
+    for val in arr:
+        otherVal = target - val
+        if otherVal in arr:
+            ind1 = arr.index(val)
+            ind2 = arr.index(otherVal)
+            if ind1 != ind2:
+                return [val,otherVal]
+            else:
+                otherValOccur = arr.count(val)
+                if otherValOccur > 1:
+                    ind2 = arr.index(otherVal,ind1)
+                    return [val,arr.pop(ind2)]
+    return []
 
 
 
